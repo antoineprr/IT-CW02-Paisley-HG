@@ -1,6 +1,6 @@
 import { Form, useLoaderData, useActionData, Link } from "react-router";
-import { loader } from "./register.$id.server";
-export { loader }
+import { loader, action } from "./register.$id.server";
+export { loader, action }
 
 export default function Register() {
   const event = useLoaderData<typeof loader>();

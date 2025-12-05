@@ -15,10 +15,10 @@ import "./app.css"; // includes bootstrap
 export const meta: MetaFunction = ({ matches }) => {
     // Get base metadata for all pages
     const baseMeta = [
-        { title: "Local Library" },
+        { title: "Paisley Highland Games" },
         {
             property: "og:title",
-            content: "Very cool app",
+            content: "Paisley Highland Games",
         },
     ];
 

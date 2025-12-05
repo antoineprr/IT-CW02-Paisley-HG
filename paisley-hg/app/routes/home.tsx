@@ -1,10 +1,11 @@
-import { type MetaFunction, Link } from "react-router";
+import { type MetaFunction } from "react-router";
+import { Link as RouterLink } from "react-router";
 
 export const meta: MetaFunction = () => {
   return [
     {
       name: "description",
-      content: "Paisley Highland Games - Traditional Scottish Athletic Competition",
+      content: "Paisley Highland Games",
     },
   ];
 };
@@ -19,9 +20,9 @@ export default function Home() {
           Experience the tradition and strength of Scottish Highland athletics. 
           Join us for a day of competition, culture, and community in beautiful Paisley.
         </p>
-        <Link to="/events" className="hero-cta">
+        <RouterLink to="/events" className="hero-cta">
           View Events
-        </Link>
+        </RouterLink>
       </div>
 
       {/* Features Grid */}
@@ -49,12 +50,12 @@ export default function Home() {
         </div>
         <div className="card-body">
           <div className="grid grid-2">
-            <Link to="/events" className="btn btn-primary">
+            <RouterLink to="/events" className="btn btn-primary">
               Browse Events
-            </Link>
-            <Link to="/dashboard" className="btn btn-secondary">
+            </RouterLink>
+            <RouterLink to="/dashboard" className="btn btn-secondary">
               View Dashboard
-            </Link>
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -81,9 +82,9 @@ export default function Home() {
               The Paisley Highland Games celebrates Scottish heritage with traditional 
               athletic competitions, music, dancing, and cultural exhibitions.
             </p>
-            <Link to="/about" className="btn btn-outline">
+            <RouterLink to="/about" className="btn btn-outline">
               Learn More
-            </Link>
+            </RouterLink>
           </div>
         </div>
       </div>

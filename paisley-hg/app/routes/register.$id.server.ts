@@ -1,6 +1,7 @@
 import { connectDB } from "../db";
 import { Event } from "../models/Event";
 import { Registration } from "../models/Registration";
+import { redirect } from "react-router";
 
 export interface RegisterEventData {
   _id: string;
@@ -36,7 +37,7 @@ export async function action({ request, params }: { request: Request; params: { 
       club: data.club || "",
     });
 
-    return { ok: true };
+    return redirect(`/events/${params.id}`);
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : String(err) };
   }
