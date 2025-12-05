@@ -3,8 +3,24 @@ import mongoose from "mongoose";
 
 dotenv.config();
 
+// Function to properly encode MongoDB connection string
+const encodeMongoDBPassword = (connectionString: string): string => {
+  // Match MongoDB connection string pattern
+  const match = connectionString.match(/^(mongodb(?:\+srv)?:\/\/[^:]+:)([^@]+)(@.+)$/);
+  
+  if (match) {
+    const [, prefix, password, suffix] = match;
+    // Encode the password part only
+    const encodedPassword = encodeURIComponent(password);
+    return `${prefix}${encodedPassword}${suffix}`;
+  }
+  
+  return connectionString;
+};
+
 // eslint-disable-next-line no-undef
-const connectionString: string = process.env.DB_STRING ?? "no connection string";
+const rawConnectionString: string = process.env.DB_STRING ?? "no connection string";
+const connectionString: string = encodeMongoDBPassword(rawConnectionString);
 
 let isConnected = false;
 
