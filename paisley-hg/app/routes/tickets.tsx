@@ -7,15 +7,6 @@ export default function Tickets() {
 
   return (
     <div>
-      <div className="card">
-        <div className="card-header">
-          <h1 className="card-title">Highland Games Tickets</h1>
-        </div>
-        <div className="card-body">
-          <p>Purchase your tickets for the Paisley Highland Games and join us for a day of traditional Scottish competition.</p>
-        </div>
-      </div>
-
       {result?.ok ? (
         <div className="card">
           <div className="card-body text-center">

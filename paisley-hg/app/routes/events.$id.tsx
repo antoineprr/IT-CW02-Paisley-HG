@@ -22,9 +22,6 @@ export default function EventDetail() {
       <div className="event-detail">
         <header className="event-detail-header">
           <h1 className="event-title">{event.name}</h1>
-          {event.category && (
-            <span className="event-category">{event.category}</span>
-          )}
         </header>
         
         <div className="event-content">

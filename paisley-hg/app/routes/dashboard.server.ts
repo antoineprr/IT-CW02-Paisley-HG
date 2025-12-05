@@ -14,7 +14,7 @@ export interface RegistrationData {
 
 export async function loader(): Promise<RegistrationData[]> {
   await connectDB();
-  const regs = await Registration.find({}).exec();
+  const regs = await Registration.find({}).sort({ createdAt: -1 }).exec();
   
   const events = await Event.find({}).exec();
   const eventMap = new Map(events.map(e => [e._id.toString(), e.name]));

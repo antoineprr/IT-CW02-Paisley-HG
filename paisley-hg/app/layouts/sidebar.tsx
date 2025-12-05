@@ -68,7 +68,7 @@ export default function MainLayout() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2025 Paisley Highland Games - Traditional Scottish Athletic Competition</p>
+          <p>&copy; 2025 Paisley Highland Games</p>
         </div>
       </footer>
       

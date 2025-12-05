@@ -41,7 +41,7 @@ export default function About() {
           <div className="card-header">
             <h2 className="card-title">Events & Competitions</h2>
           </div>
-          <div className="card-body">
+          <div className="card-body" style={{ padding: '1rem' }}>
             <h3 style={{fontWeight: 'bold', marginBottom: '0.5rem'}}>Athletic Events:</h3>
             <ul style={{marginBottom: '1rem', lineHeight: '1.6'}}>
               <li>Caber Toss</li>

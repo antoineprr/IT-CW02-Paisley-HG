@@ -12,7 +12,7 @@ export default function Results() {
           <h1 className="card-title">Highland Games Results</h1>
         </div>
         <div className="card-body">
-          <p>Competition results from previous Highland Games events in Paisley.</p>
+          <p>Competition results from previous Highland Games editions in Paisley.</p>
         </div>
       </div>
 
@@ -21,8 +21,7 @@ export default function Results() {
           {results.map((result: any) => (
             <div key={result._id} className="card">
               <div className="card-header">
-                <h3 className="card-title">{result.eventName}</h3>
-                <div style={{fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)'}}>Year {result.year}</div>
+                <h3 className="card-title">{result.eventName} - {result.year}</h3>
               </div>
               <div className="card-body">
                 <h4 style={{fontWeight: 'bold', marginBottom: '1rem'}}>Results:</h4>
