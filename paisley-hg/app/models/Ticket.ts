@@ -1,4 +1,5 @@
-import { Schema, model, models, Document } from "mongoose";
+import mongoose, { Schema, model, Document } from "mongoose";
+const { models } = mongoose;
 
 export interface ITicket extends Document {
   purchaserName: string;

@@ -1,5 +1,5 @@
 import { Form, useLoaderData, useActionData } from "react-router";
-import { loader, action } from "./register.$id.server";
+import { loader } from "./register.$id.server";
 export { loader }
 
 export default function Register() {
