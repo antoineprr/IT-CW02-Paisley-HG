@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-router/node": "^7.9.5",
     "@react-router/serve": "^7.9.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^17.2.3",
     "isbot": "^5.1.17",
     "luxon": "^3.7.2",
@@ -30,7 +31,6 @@
     "@types/node": "^20",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
-    "cross-env": "^7.0.3",
     "typescript": "^5.7.2",
     "vite": "^7.2.4"
   },
