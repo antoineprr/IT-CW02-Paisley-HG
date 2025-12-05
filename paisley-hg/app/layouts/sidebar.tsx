@@ -23,11 +23,10 @@ export const meta: MetaFunction = () => {
 export default function SidebarLayout() {
   const navItems: NavItem[] = [
     { path: "/", label: "Home" },
-    { path: "/catalog", label: "Catalog" },
-    { path: "/authors", label: "Authors" },
-    { path: "/genres", label: "Genres" },
-    { path: "/books", label: "Books" },
-    { path: "/instances", label: "Book Instances" },
+    { path: "/events", label: "Events" },
+    { path: "/dashboard", label: "Dashboard" },
+    { path: "/tickets", label: "Tickets" },
+    { path: "/results", label: "Results" },
     { path: "/about", label: "About" },
   ];
 

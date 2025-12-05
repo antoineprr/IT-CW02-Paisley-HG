@@ -8,11 +8,12 @@ import {
 export default [
   layout("layouts/sidebar.tsx", [
     index("routes/home.tsx"),
-    route("catalog", "routes/catalog.tsx"),
-    route("authors", "routes/authors.tsx"),
-    route("genres", "routes/genres.tsx"),
-    route("books", "routes/books.tsx"),
-    route("instances", "routes/bookinstances.tsx"),
+    route("events", "routes/events.tsx"),
+    route("events/:id", "routes/events.$id.tsx"),
+    route("register/:id", "routes/register.$id.tsx"),
+    route("dashboard", "routes/dashboard.tsx"),
+    route("tickets", "routes/tickets.tsx"),
+    route("results", "routes/results.tsx"),
   ]),
   route("about", "routes/about.tsx"),
 ] satisfies RouteConfig;

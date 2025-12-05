@@ -7,7 +7,7 @@ export interface RegisterEventData {
   name: string;
 }
 
-export async function loader({ params }): Promise<RegisterEventData | null> {
+export async function loader({ params }: { params: { id: string } }): Promise<RegisterEventData | null> {
   await connectDB();
   const event = await Event.findById(params.id).exec();
   if (!event) return null;
@@ -18,9 +18,9 @@ export async function loader({ params }): Promise<RegisterEventData | null> {
   };
 }
 
-export async function action({ request, params }) {
+export async function action({ request, params }: { request: Request; params: { id: string } }) {
   try {
-    await connectDb();
+    await connectDB();
     const fd = await request.formData();
     const data = Object.fromEntries(fd);
 

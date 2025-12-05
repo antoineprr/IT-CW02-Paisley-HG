@@ -10,7 +10,7 @@ export interface EventDetailData {
   description: string;
 }
 
-export async function loader({ params }): Promise<EventDetailData | null> {
+export async function loader({ params }: { params: { id: string } }): Promise<EventDetailData | null> {
   try {
     console.log(`[loadEvent:${params.id}] Connecting DB...`);
     await connectDB();
