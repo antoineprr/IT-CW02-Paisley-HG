@@ -9,7 +9,6 @@ import {
 interface NavItem {
   path: string;
   label: string;
-  icon: string;
 }
 
 export const meta: MetaFunction = () => {
@@ -23,11 +22,11 @@ export const meta: MetaFunction = () => {
 
 export default function MainLayout() {
   const navItems: NavItem[] = [
-    { path: "/", label: "Home", icon: "🏴󠁧󠁢󠁳󠁣󠁴󠁿" },
-    { path: "/events", label: "Events", icon: "🥇" },
-    { path: "/dashboard", label: "Dashboard", icon: "📊" },
-    { path: "/tickets", label: "Tickets", icon: "🎫" },
-    { path: "/results", label: "Results", icon: "🏆" },
+    { path: "/", label: "Home" },
+    { path: "/events", label: "Events" },
+    { path: "/dashboard", label: "Dashboard" },
+    { path: "/tickets", label: "Tickets" },
+    { path: "/results", label: "Results" },
   ];
 
   return (
@@ -36,7 +35,6 @@ export default function MainLayout() {
       <header className="header">
         <div className="header-content">
           <div className="logo">
-            <span className="logo-icon">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
             <h1 className="logo-text">Paisley Highland Games</h1>
           </div>
           <nav className="main-nav">
@@ -48,8 +46,7 @@ export default function MainLayout() {
                   `nav-item ${isActive ? 'active' : ''}`
                 }
               >
-                <span className="nav-icon">{item.icon}</span>
-                <span className="nav-label">{item.label}</span>
+                {item.label}
               </NavLink>
             ))}
           </nav>

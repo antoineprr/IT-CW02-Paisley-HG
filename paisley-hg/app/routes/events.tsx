@@ -25,7 +25,7 @@ export default function EventsList() {
             </div>
             <div className="event-body">
               <span className="event-category">{e.category}</span>
-              <p className="event-location">📍 {e.location}</p>
+              <p className="event-location">{e.location}</p>
               {e.description && <p>{e.description}</p>}
               <div style={{marginTop: '1rem'}}>
                 <Link to={`/events/${e._id}`} className="btn btn-primary">

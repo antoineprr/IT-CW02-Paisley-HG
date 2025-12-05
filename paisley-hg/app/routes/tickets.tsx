@@ -19,7 +19,6 @@ export default function Tickets() {
       {result?.ok ? (
         <div className="card">
           <div className="card-body text-center">
-            <div style={{fontSize: '4rem', marginBottom: '1rem'}}>🎉</div>
             <h2 style={{fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem'}}>Purchase Successful!</h2>
             <div className="card" style={{background: 'var(--cream-light)', border: '2px solid var(--festival-gold)'}}>
               <div className="card-body">

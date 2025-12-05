@@ -44,19 +44,19 @@ export default function About() {
           <div className="card-body">
             <h3 style={{fontWeight: 'bold', marginBottom: '0.5rem'}}>Athletic Events:</h3>
             <ul style={{marginBottom: '1rem', lineHeight: '1.6'}}>
-              <li>• Caber Toss</li>
-              <li>• Hammer Throw</li>
-              <li>• Stone Put</li>
-              <li>• Weight for Distance</li>
-              <li>• Sheaf Toss</li>
+              <li>Caber Toss</li>
+              <li>Hammer Throw</li>
+              <li>Stone Put</li>
+              <li>Weight for Distance</li>
+              <li>Sheaf Toss</li>
             </ul>
             
             <h3 style={{fontWeight: 'bold', marginBottom: '0.5rem'}}>Cultural Events:</h3>
             <ul style={{lineHeight: '1.6'}}>
-              <li>• Pipe Band Competitions</li>
-              <li>• Highland Dancing</li>
-              <li>• Traditional Music</li>
-              <li>• Scottish Heritage Displays</li>
+              <li>Pipe Band Competitions</li>
+              <li>Highland Dancing</li>
+              <li>Traditional Music</li>
+              <li>Scottish Heritage Displays</li>
             </ul>
           </div>
         </div>

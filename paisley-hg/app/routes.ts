@@ -14,6 +14,6 @@ export default [
     route("dashboard", "routes/dashboard.tsx"),
     route("tickets", "routes/tickets.tsx"),
     route("results", "routes/results.tsx"),
+    route("about", "routes/about.tsx"),
   ]),
-  route("about", "routes/about.tsx"),
 ] satisfies RouteConfig;

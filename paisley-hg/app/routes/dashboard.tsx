@@ -6,30 +6,29 @@ export default function Dashboard() {
   const regs = useLoaderData<typeof loader>();
 
   return (
-    <div>
-      <div className="card">
-        <div className="card-header">
-          <h1 className="card-title">Highland Games Dashboard</h1>
-        </div>
-        <div className="card-body">
-          <p>Overview of registrations and event management for Paisley Highland Games.</p>
-        </div>
-      </div>
+    <div className="dashboard-container">
+      <header className="dashboard-header">
+        <h1>Dashboard</h1>
+        <p>Overview of registrations and event management</p>
+      </header>
 
-      <div className="card">
-        <div className="card-header">
-          <h2 className="card-title">Recent Registrations</h2>
+      <section className="dashboard-content">
+        <div className="section-header">
+          <h2>Recent Registrations</h2>
         </div>
-        <div className="card-body">
-          {regs.length === 0 ? (
-            <p>No registrations yet.</p>
-          ) : (
-            <table className="table">
+        
+        {regs.length === 0 ? (
+          <div className="empty-state">
+            <p>No registrations yet</p>
+          </div>
+        ) : (
+          <div className="table-container">
+            <table className="minimal-table">
               <thead>
                 <tr>
                   <th>Participant</th>
                   <th>Event</th>
-                  <th>Registration Date</th>
+                  <th>Date</th>
                 </tr>
               </thead>
               <tbody>
@@ -42,9 +41,9 @@ export default function Dashboard() {
                 ))}
               </tbody>
             </table>
-          )}
-        </div>
-      </div>
+          </div>
+        )}
+      </section>
     </div>
   );
 }

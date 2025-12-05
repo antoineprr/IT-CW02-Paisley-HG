@@ -27,19 +27,16 @@ export default function Home() {
       {/* Features Grid */}
       <div className="stats-grid">
         <div className="stat-card">
-          <div className="stat-number">⚔️</div>
           <div className="stat-label">Traditional Events</div>
           <p style={{fontSize: '0.9rem', marginTop: '0.5rem'}}>Caber toss, hammer throw, stone put, and more</p>
         </div>
         
         <div className="stat-card">
-          <div className="stat-number">🎵</div>
           <div className="stat-label">Pipe Band Competitions</div>
           <p style={{fontSize: '0.9rem', marginTop: '0.5rem'}}>Highland bagpipe and drumming contests</p>
         </div>
         
         <div className="stat-card">
-          <div className="stat-number">👑</div>
           <div className="stat-label">Highland Dancing</div>
           <p style={{fontSize: '0.9rem', marginTop: '0.5rem'}}>Traditional Scottish dance performances</p>
         </div>
@@ -66,20 +63,20 @@ export default function Home() {
       <div className="grid grid-2 mt-lg">
         <div className="card">
           <div className="card-body">
-            <h3 style={{fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '1rem'}}>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Highland Events</h3>
+            <h3 style={{fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '1rem'}}>Highland Events</h3>
             <ul style={{fontSize: '0.9rem', lineHeight: '1.8'}}>
-              <li>• Caber Toss - The ultimate test of strength</li>
-              <li>• Hammer Throw - Traditional Scottish athletics</li>
-              <li>• Stone Put - Ancient Highland competition</li>
-              <li>• Weight for Distance - Power and technique</li>
-              <li>• Sheaf Toss - Farmer's strength event</li>
+              <li>Caber Toss - The ultimate test of strength</li>
+              <li>Hammer Throw - Traditional Scottish athletics</li>
+              <li>Stone Put - Ancient Highland competition</li>
+              <li>Weight for Distance - Power and technique</li>
+              <li>Sheaf Toss - Farmer's strength event</li>
             </ul>
           </div>
         </div>
         
         <div className="card">
           <div className="card-body">
-            <h3 style={{fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '1rem'}}>🎪 Festival Features</h3>
+            <h3 style={{fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '1rem'}}>Festival Features</h3>
             <p style={{fontSize: '0.9rem', marginBottom: '1rem', lineHeight: '1.6'}}>
               The Paisley Highland Games celebrates Scottish heritage with traditional 
               athletic competitions, music, dancing, and cultural exhibitions.

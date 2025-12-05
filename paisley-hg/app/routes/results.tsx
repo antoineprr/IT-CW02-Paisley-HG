@@ -21,11 +21,11 @@ export default function Results() {
           {results.map((result: any) => (
             <div key={result._id} className="card">
               <div className="card-header">
-                <h3 className="card-title">🏆 {result.eventName}</h3>
+                <h3 className="card-title">{result.eventName}</h3>
                 <div style={{fontSize: '0.9rem', color: 'rgba(255,255,255,0.8)'}}>Year {result.year}</div>
               </div>
               <div className="card-body">
-                <h4 style={{fontWeight: 'bold', marginBottom: '1rem'}}>🏅 Results:</h4>
+                <h4 style={{fontWeight: 'bold', marginBottom: '1rem'}}>Results:</h4>
                 {result.rankings && result.rankings.length > 0 ? (
                   <ol style={{paddingLeft: '1.5rem'}}>
                     {result.rankings.map((ranking: any, index: number) => (

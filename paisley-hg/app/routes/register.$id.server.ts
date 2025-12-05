@@ -5,6 +5,8 @@ import { Registration } from "../models/Registration";
 export interface RegisterEventData {
   _id: string;
   name: string;
+  date?: string;
+  location?: string;
 }
 
 export async function loader({ params }: { params: { id: string } }): Promise<RegisterEventData | null> {
@@ -15,6 +17,8 @@ export async function loader({ params }: { params: { id: string } }): Promise<Re
   return {
     _id: event._id.toString(),
     name: event.name,
+    date: event.date,
+    location: event.location,
   };
 }
 
