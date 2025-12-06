@@ -1,245 +1,125 @@
-# Paisley Highland Games - Web Deployment
+# Paisley Highland Games
 
-## Documentation Navigation
+A web application for managing Highland Games events, registrations, results, and ticket sales.
 
-**[INDEX.md](INDEX.md)** - Complete guide to navigate all documentation
+## Features
 
-## Complete Documentation
+- Event management and scheduling
+- Online registration for participants
+- Results tracking and display
+- Ticket purchasing system
+- Responsive design with Bootstrap
 
-### Quick Start
-**[QUICKSTART.md](QUICKSTART.md)** - Deploy in 15 minutes  
-*Perfect for: Deploy quickly without reading all documentation*
+## Tech Stack
 
-### Complete Guide
-**[DEPLOYMENT.md](DEPLOYMENT.md)** - Detailed step-by-step guide  
-*Perfect for: Understanding each step in detail*
+- **Frontend**: React 19, React Router 7
+- **Backend**: Node.js, React Router (SSR)
+- **Database**: MongoDB with Mongoose
+- **Styling**: Bootstrap 5
+- **Build**: Vite
 
-### Alternative Options
-**[ALTERNATIVES.md](ALTERNATIVES.md)** - Other deployment platforms  
-*Perfect for: Comparing options and choosing the best for you*
+## Quick Start
 
-### Troubleshooting
-**[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Debugging and solutions  
-*Perfect for: Solving common errors and problems*
+### Prerequisites
 
-### Architecture
-**[ARCHITECTURE.md](ARCHITECTURE.md)** - Diagrams and technical architecture  
-*Perfect for: Understanding the global system architecture*
+- Node.js 20+
+- MongoDB Atlas account (free)
 
-### Cheat Sheet
-**[CHEATSHEET.md](CHEATSHEET.md)** - Commands and quick references  
-*Perfect for: Quick reference and essential commands*
+### Local Development
 
----
-
-## Ultra-Fast Start
-
-### Step 1: MongoDB Atlas (5 min)
-```
--> https://www.mongodb.com/cloud/atlas/register
--> Plan: FREE (M0)
--> Get connection string
+1. **Install dependencies**
+```bash
+cd paisley-hg
+npm install
 ```
 
-### Step 2: Render.com (10 min)
-```
--> https://render.com/
--> New Web Service
--> Connect GitHub repo
--> Add Environment Variables:
-   - NODE_ENV=production
-   - DB_STRING=mongodb+srv://...
--> Deploy
+2. **Configure environment**
+
+Create a `.env` file in the `paisley-hg` directory:
+```bash
+DB_STRING=mongodb+srv://username:password@cluster.mongodb.net/paisley_highland_games
+NODE_ENV=development
 ```
 
-### Step 3: Seed Database (3 min)
+3. **Start development server**
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+### Seed Database
+
+1. Navigate to seed directory:
 ```bash
 cd seed
 npm install
-# Edit .env
+```
+
+2. Create `.env` file with your MongoDB connection string
+
+3. Run seed script:
+```bash
 node index.js
 ```
 
-### Done!
-Your app is live: `https://your-app.onrender.com`
+## Deployment
 
----
+### MongoDB Atlas Setup
 
-## Total Cost: Free
+1. Create a free account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)
+2. Create a new cluster (M0 Free tier)
+3. Configure database access:
+   - Create a database user with read/write permissions
+   - Add IP address `0.0.0.0/0` to Network Access
+4. Get your connection string
 
-| Service | Plan | Cost | Limit |
-|---------|------|------|-------|
-| **MongoDB Atlas** | Free | $0 | 512 MB |
-| **Render.com** | Free | $0 | 750h/month |
-| **Domain** | .onrender.com | $0 | Included |
-| **SSL/HTTPS** | Automatic | $0 | Included |
-| **TOTAL** | | **$0** | Unlimited |
+### Render.com Deployment
 
----
+1. Sign up at [Render.com](https://render.com/)
+2. Create a new Web Service
+3. Connect your GitHub repository
+4. Configure:
+   - **Root Directory**: `paisley-hg`
+   - **Runtime**: Docker
+   - **Plan**: Free
+5. Add environment variables:
+   - `NODE_ENV`: `production`
+   - `DB_STRING`: Your MongoDB Atlas connection string
+6. Deploy
 
-## Student Bonus
-
-### GitHub Student Developer Pack
-https://education.github.com/pack
-
-**Get for FREE**:
-- DigitalOcean: $200 credit
-- Azure: $100 credit
-- Heroku: $13/month
-- MongoDB Atlas: $50 credit
-- Namecheap: Free domain 1 year
-- 60+ other free tools
-
-**Duration**: As long as you are a student
-
----
+The app will be live at `https://your-app.onrender.com`
 
 ## Project Structure
 
 ```
-PaisleyHG/
-├── README.md                 <- You are here
-├── QUICKSTART.md             <- Quick deployment
-├── DEPLOYMENT.md             <- Complete guide
-├── ALTERNATIVES.md           <- Other options
-├── TROUBLESHOOTING.md        <- Troubleshooting
-│
-├── paisley-hg/               <- Main application
-│   ├── app/                  <- React Router code
-│   ├── Dockerfile            <- Docker config
-│   ├── package.json
-│   └── README.md             <- Technical doc
-│
-└── seed/                     <- Initial data
-    ├── index.js              <- Seed script
-    ├── README.md             <- Seed instructions
-    └── .env.example
+paisley-hg/
+├── app/
+│   ├── routes/          # Route handlers and pages
+│   ├── models/          # MongoDB schemas
+│   ├── layouts/         # Layout components
+│   └── root.tsx         # App root
+├── public/              # Static assets
+├── Dockerfile           # Container configuration
+└── package.json         # Dependencies
+
+seed/
+├── index.js             # Database seeding script
+└── config/              # Database configuration
 ```
 
----
+## Common Issues
 
-## Choose Your Path
+**Cannot connect to database**
+- Verify your MongoDB connection string
+- Check that IP `0.0.0.0/0` is whitelisted in MongoDB Atlas
+- Ensure database user has correct permissions
 
-### I want to deploy NOW
-**[QUICKSTART.md](QUICKSTART.md)**  
-15 minutes. Follow the steps.
+**App is slow to load (Render free tier)**
+- Free tier apps sleep after 15 minutes of inactivity
+- First request after sleep takes ~30 seconds to wake up
 
-### I want to understand in detail
-**[DEPLOYMENT.md](DEPLOYMENT.md)**  
-Complete guide with explanations.
+## License
 
-### I want to compare options
-**[ALTERNATIVES.md](ALTERNATIVES.md)**  
-Railway, Fly.io, Vercel, Heroku, Azure...
+This is a student project for educational purposes.
 
-### I have an error
-**[TROUBLESHOOTING.md](TROUBLESHOOTING.md)**  
-Solutions to common problems.
-
----
-
-## App Features
-
-- **Highland Games Events** - List and details
-- **Registrations** - Online registration form
-- **Results** - Rankings and history
-- **Ticketing** - Purchase with unique codes
-- **Dashboard** - Real-time statistics
-- **Responsive** - Mobile and desktop
-
----
-
-## Tech Stack
-
-- **Frontend**: React 19 + React Router v7
-- **Backend**: Node.js + React Router Server
-- **Database**: MongoDB (Mongoose)
-- **Deploy**: Docker + Render.com
-- **Hosting**: Free and unlimited
-
----
-
-## Support
-
-### Need help?
-
-1. **Check** [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
-2. **Render Support**: https://render.com/docs
-3. **MongoDB Support**: https://docs.atlas.mongodb.com/
-4. **Stack Overflow**: Tags `react-router`, `mongodb`, `render-com`
-
----
-
-## Ready to Deploy?
-
-### Estimated time: 15-30 minutes
-### Cost: $0
-### Required skills: Beginner
-
-**Start now** - **[QUICKSTART.md](QUICKSTART.md)**
-
----
-
-## Important Notes
-
-### Render Free Plan
-- App "sleeps" after 15 min of inactivity
-- Restarts in ~30 seconds on next access
-- **Solution**: Use UptimeRobot (free) to ping the app
-
-### Sufficient For
-- Student projects
-- Demonstrations
-- Portfolios
-- Prototypes
-- Course projects
-
-### Not Recommended For
-- High-availability commercial applications
-- High concurrent traffic (>100 users)
-- Need for 100% uptime
-
----
-
-## Complete Checklist
-
-### Before Deployment
-- [ ] MongoDB Atlas account created
-- [ ] MongoDB cluster created (Free plan)
-- [ ] Database user created
-- [ ] Network Access: 0.0.0.0/0
-- [ ] Connection string retrieved
-- [ ] Render.com account created
-- [ ] GitHub account with repo
-
-### Deployment
-- [ ] Service created on Render
-- [ ] GitHub repo connected
-- [ ] Root Directory: `paisley-hg`
-- [ ] Runtime: Docker
-- [ ] Environment variables added
-- [ ] First deployment launched
-
-### After Deployment
-- [ ] Build completed (green logs)
-- [ ] App accessible via URL
-- [ ] Database seeded (initial data)
-- [ ] Events/results pages work
-- [ ] Registration forms work
-- [ ] No errors in logs
-
-### Bonus
-- [ ] UptimeRobot configured (prevent sleep)
-- [ ] GitHub Student Pack activated
-- [ ] Custom domain (optional)
-
----
-
-## Success!
-
-Once deployed, share your application:
-```
-https://your-app.onrender.com
-```
-
-**Happy deploying!**
